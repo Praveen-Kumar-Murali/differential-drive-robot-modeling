@@ -33,7 +33,8 @@ plt.plot(robot.xTraj, robot.yTraj, 'orange', label='Robot path')
 plt.axis('equal')
 plt.grid(True)
 plt.legend()
-plt.show()
+plt.savefig('figures/circular_trajectory.png')
+plt.close()
 
 
 # --------------- Figure-eight trajectory (FINAL REVISION) ---------------
@@ -87,4 +88,5 @@ plt.plot(robot.xTraj, robot.yTraj, 'blue', label='Robot path')
 plt.axis('equal')
 plt.grid(True)
 plt.legend()
-plt.show()
+plt.savefig('figures/figure_eight_trajectory.png')
+plt.close()

@@ -41,4 +41,14 @@ Experiments showcase the deviation between ground-truth simulation trajectory (o
 
 ![Differential Drive Geometry](figures/DifferentialDrive.png)
 
-_To explore the mathematical proofs and detailed experimental results, refer to the documentation inside `docs/`._
+### Experimental Validation
+
+The framework was validated through extensive simulations of a 3DOF differential drive robot. The dead-reckoning localization method was evaluated under different process and measurement noise configurations to isolate drift mechanics:
+
+**Experiment 1: Realistic Dead-Reckoning (Non-Zero Noise)**  
+Process and measurement noise covariances were set to non-zero values. The estimated trajectory deviates from the ground truth and continuously drifts, demonstrating the inherent limitation of pure odometry integration over time.  
+![Realistic Odometry Drift](figures/dead_reckoning_noisy.png)
+
+**Experiment 2: Ideal Kinematics (Zero Noise)**  
+Under zero noise, the kinematic model perfectly tracks the constant control inputs, yielding an exact overlap between ground truth and estimated paths. This configuration proves that the underlying numerical integration and transformation mathematics are fundamentally correct.  
+![Ideal Kinematics Validation](figures/dead_reckoning_ideal.png)
